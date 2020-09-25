@@ -1,10 +1,8 @@
+let i=0;
+
 export default function addItem() {
 let table = document.getElementById('table'),
 form = document.getElementById('add_form')
-
-
-    let i = 0;
-    i++
     let nameField = form.name,
     priceField = form.price;
     let obj = {
@@ -14,7 +12,7 @@ form = document.getElementById('add_form')
     
     localStorage.setItem(i, JSON.stringify(obj))
     let storObj = localStorage.getItem(i);
-    console.log(JSON.parse(storObj).name)
+    console.log(localStorage.length)
 
     
     table.insertAdjacentHTML('beforeend', `        <tr>
@@ -26,5 +24,5 @@ form = document.getElementById('add_form')
     </td>
 </tr>`)
     form.reset()
-
+    i++
 }
