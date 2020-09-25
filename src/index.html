@@ -7,5 +7,32 @@
     <title>AHJ__HW_5.2</title>
 </head>
 <body>
+    <form id="add_form">
+        <div class="modal modal_add">
+            <p class="input_header">Название</p>
+            <input type="text" id="new_item_name_input" name="name" placeholder='Например, "MacBook Pro"' required>
+            <p class="input_header">Стоимость</p>
+            <input type="text" id="new_item_price_input" name="price" placeholder="Только числовые значения" required>
+            <br>
+            <button id="submit_btn" type='submit' label="add">Добавить</button>
+            <button id="cancel_btn" type="button" label="cancel">Отмена</button>
+        </div>
+    </form>
+    <table id="table">
+        <thead>Товары <span class="add">&#8853;</span></thead>
+        <tr>
+            <td class="column_name">Название</td>
+            <td class="column_name">Стоимость</td>
+            <td class="column_name">Действия</td>
+        </tr>
+        <!-- <tr>
+            <td class="item_name"></td>
+            <td class="item_price"></td>
+            <td class="item_actions">
+                <span class="edit">&#9998;</span>
+                <span class="delete">&#65794;</span>
+            </td>
+        </tr> -->
+    </table>
 </body>
 </html>
