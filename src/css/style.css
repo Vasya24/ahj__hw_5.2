@@ -3,6 +3,7 @@
     src: ur()
 }
 
+
 table {
     border: 2px solid black;
     width: 500px;
@@ -38,12 +39,16 @@ button {
 }
 
 .modal {
-    /* position: absolute; */
-    /* top: -250px; */
-    left: 500px;
+    position: absolute;
+    top: -250px;
+    left: 50%;
     width: 500px;
     border: 0.5px solid black;
     padding: 20px;
     transition: top 2s ease;
     background-color: #DDDDDD;
+}
+
+.modal.active {
+    top: 20px;
 }
