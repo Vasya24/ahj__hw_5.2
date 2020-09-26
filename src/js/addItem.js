@@ -12,7 +12,6 @@ form = document.getElementById('add_form')
     
     localStorage.setItem(i, JSON.stringify(obj))
     let storObj = localStorage.getItem(i);
-    console.log(localStorage.length)
 
     
     table.insertAdjacentHTML('beforeend', `        <tr>
@@ -25,4 +24,14 @@ form = document.getElementById('add_form')
 </tr>`)
     form.reset()
     i++
+
+    document.querySelector('.edit').addEventListener('click', (e) => {
+        console.log(e.target.className)
+    })
+
+    document.querySelector('.delete').addEventListener('click', (e) => {
+        if (e.target.parentNode.className == 'item_actions') {
+            e.target.parentNode.parentNode.remove()
+        }
+    })
 }

@@ -18,6 +18,18 @@
             <button id="cancel_btn" type="reset" label="cancel">Отмена</button>
         </div>
     </form>
+    <form id="edit_form">
+        <div class="modal modal_edit">
+            <p class="input_header">Название</p>
+            <input type="text" id="item_name_input" name="name" placeholder='Например, "MacBook Pro"' required>
+            <p class="input_header">Стоимость</p>
+            <input type="text" id="item_price_input" name="price" placeholder="Только числовые значения" required>
+            <br>
+            <button id="submit_btn" type='submit' label="add">Изменить</button>
+            <button id="cancel_btn" type="reset" label="cancel">Отмена</button>
+        </div>
+
+    </form>
     <table id="table">
         <thead>Товары <span class="add">&#8853;</span></thead>
         <tr>

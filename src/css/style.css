@@ -65,7 +65,7 @@ button {
     width: 500px;
     border: 0.5px solid black;
     padding: 20px;
-    transition: top 2s ease;
+    transition: top 0.8s ease;
     background-color: #DDDDDD;
 }
 
