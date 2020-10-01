@@ -29,8 +29,8 @@ function addItem() {
         <td class="item_name">${obj.name.trim()}</td>
         <td class="item_price">${obj.price}</td>
         <td class="item_actions">
-            <span class="edit" data-index="${obj.id}">&#9998;</span>
-            <span class="delete" data-number="${obj.id}">&#65794;</span>
+            <span class="edit" data-index="${counter}">&#9998;</span>
+            <span class="delete" data-index="${counter}">&#65794;</span>
         </td>
     </tr>`);
     arr.push(obj)
@@ -44,32 +44,31 @@ function addItem() {
                     
                 ed.addEventListener('click', function(e) {
                     editItemModal.classList.add('active');
-                    console.log(e.currentTarget.dataset.index)
-                    if (e.currentTarget.dataset.index == this.id) {
-                    editNameInput.value = this.name;
-                    editPriceInput.value = this.price;
-                }});
+                    if (e.currentTarget.dataset.index == j.id) {
+                    editNameInput.value = j.name;
+                    editPriceInput.value = j.price;
+                }
+                console.log(j.id)
+            });
             
                 editForm.addEventListener('submit', () => {
                     // editForm.reset();
                     
-                    arr[j].name = editNameInput.value;
-                    arr[j].price = editPriceInput.value
+                    j.name = editNameInput.value;
+                    j.price = editPriceInput.value
                 });
                 editForm.addEventListener('reset', () => {
                     editItemModal.classList.remove('active')
                 })
-                for (let x of deleter) {
-                    x.addEventListener('click', function(e) {
-                        if (e.currentTarget.dataset.number == j.id) {
+                // for (let x of deleter) {
+                //     x.addEventListener('click', function(e) {
+                //         if (e.currentTarget.dataset.number == j.id) {
 
-                        e.currentTarget.parentElement.parentElement.remove();
-                        arr.splice(j, 1);
-                        console.log(j, arr.length)
-
-                        }
-                    })
-                }
+                //         e.currentTarget.parentElement.parentElement.remove();
+                //         arr.splice(j, 1);
+                //         }
+                //     })
+                // }
             }
             
         }
@@ -87,7 +86,6 @@ addForm.addEventListener('submit', function(e) {
     e.preventDefault();
     addItem();
     newItemModal.classList.remove('active')
-    console.log(arr)
 })
 addForm.addEventListener('reset', () => {
     newItemModal.classList.remove('active');
