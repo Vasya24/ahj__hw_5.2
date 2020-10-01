@@ -7,48 +7,40 @@
     <title>AHJ__HW_5.2</title>
 </head>
 <body>
-    <form id="add_form">
-        <div class="modal modal_add">
-            <p class="input_header">Название</p>
-            <input type="text" id="new_item_name_input" name="name" placeholder='Например, "MacBook Pro"' required>
-            <p class="input_header">Стоимость</p>
-            <input type="text" id="new_item_price_input" name="price" placeholder="Только числовые значения" required pattern="[0-9]+">
-            <br>
-            
-            <input type="submit" id="add_submit" value="Добавить">
-            <input type="reset" id="add_reset" value="Отмена">
+    <div class='container'>
+        <div class='header'>
+          <div class='header-title'>Товары</div>
+          <div class='header-button'>+</div>
         </div>
-    </form>
-    <form id="edit_form">
-        <div class="modal modal_edit">
-            <p class="input_header">Название</p>
-            <input type="text" id="edit_name_input" name="name" placeholder='Например, "MacBook Pro"'>
-            <p class="input_header">Стоимость</p>
-            <input type="text" id="edit_price_input" name="price" pattern="[0-9]+" placeholder="Только числовые значения">
-            <br>
-            <input type="submit" id="edit_submit" value="Принять изменения">
-            <input type="reset" id="edit_reset" value="Отмена">
+        <table class='products'>
+          <thead class='products-header'>
+            <tr>
+              <td class='product-title'>Название</td>
+              <td class='product-price'>Стоимость</td>
+              <td class='product-actions'>Действия</td>
+            </tr>
+          </thead>
+          <tbody id='products_list' class='products-list'>
+          </tbody>
+        </table>
+        <div class='edit-box'>
+          <form name='edit' class='edit' novalidate>
+            <div class='title'>
+              <p>Название</p>
+              <input type='text' id='input_title' class='edit-input' required>
+              <div class='tooltip'><span class='warning'></span> Заполните поле, пожалуйста.</div>
+            </div>
+            <div class='price'>
+              <p>Стоимость</p>
+              <input type='number' id='input_price' class='edit-input' min='1' required>
+              <div class='tooltip'><span class='warning'></span> Введите целое число больше нуля.</div>
+            </div>
+            <div class='buttons-box'>
+              <button type='submit' id='save_button' class='button'>Сохранить</button>
+              <button type='button' id='cancel_button' class='button'>Отмена</button>
+            </div>
+          </form>
         </div>
-
-    </form>
-    <table id="table">
-        <thead>Товары <span class="add">&#8853;</span></thead>
-        <tr>
-            <td class="column_name">Название</td>
-            <td class="column_name">Стоимость</td>
-            <td class="column_name">Действия</td>
-        </tr>
-        <!-- <tr>
-            <td class="item_name"></td>
-            <td class="item_price"></td>
-            <td class="item_actions">
-                <span class="edit">&#9998;</span>
-                <span class="delete">&#65794;</span>
-            </td>
-        </tr> -->
-    </table>
-
-
-
-</body>
+      </div>
+    </body>
 </html>
